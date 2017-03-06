@@ -21,12 +21,11 @@ public class Client {
     private long phoneNumber;
     private String email;
     private Date dateOfEstablish;
-
-
     @OneToMany(mappedBy = "clientId")
     private List<Note> noteList;
 
-
+    public Client() {
+    }
 
     public Client(long id, String name, String region, String branch, long phoneNumber, String email, Date dateOfEstablish) {
         this.id = id;

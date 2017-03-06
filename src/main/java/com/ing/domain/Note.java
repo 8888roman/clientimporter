@@ -21,6 +21,10 @@ public class Note {
     @ManyToOne
     private Client clientId;
 
+
+    public Note() {
+    }
+
     public Note(Long id, String name, String text, Date date, Client clientId) {
         this.id = id;
         this.name = name;
