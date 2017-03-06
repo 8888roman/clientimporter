@@ -1,20 +1,35 @@
 package com.ing.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Date;
+import java.util.List;
+
 /**
  * Created by pawel on 03.03.17.
  */
+@Entity
 public class Client {
-    private int clientNumber;
+    @Id
+    @Column
+    private long id;
     private String name;
     private String region;
     private String branch;
     private long phoneNumber;
     private String email;
-    private String dateOfEstablish;
+    private Date dateOfEstablish;
 
 
-    public Client(int clientNumber, String name, String region, String branch, long phoneNumber, String email, String dateOfEstablish) {
-        this.clientNumber = clientNumber;
+    @OneToMany(mappedBy = "clientId")
+    private List<Note> noteList;
+
+
+
+    public Client(long id, String name, String region, String branch, long phoneNumber, String email, Date dateOfEstablish) {
+        this.id = id;
         this.name = name;
         this.region = region;
         this.branch = branch;
@@ -24,11 +39,11 @@ public class Client {
     }
 
     public long getClientNumber() {
-        return clientNumber;
+        return id;
     }
 
-    public void setClientNumber(int clientNumber) {
-        this.clientNumber = clientNumber;
+    public void setClientNumber(long clientNumber) {
+        this.id = clientNumber;
     }
 
     public String getName() {
@@ -71,18 +86,27 @@ public class Client {
         this.email = email;
     }
 
-    public String getDateOfEstablish() {
+    public Date getDateOfEstablish() {
         return dateOfEstablish;
     }
 
-    public void setDateOfEstablish(String dateOfEstablish) {
+    public void setDateOfEstablish(Date dateOfEstablish) {
         this.dateOfEstablish = dateOfEstablish;
+    }
+
+
+    public void setNoteList(List<Note> noteList) {
+        this.noteList = noteList;
+    }
+
+    public List<Note> getNoteList() {
+        return noteList;
     }
 
     @Override
     public String toString() {
         return "Client{" +
-                "clientNumber=" + clientNumber +
+                "clientNumber=" + id +
                 ", name='" + name + '\'' +
                 ", region='" + region + '\'' +
                 ", branch='" + branch + '\'' +
