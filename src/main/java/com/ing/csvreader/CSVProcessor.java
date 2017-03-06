@@ -8,12 +8,12 @@ import com.ing.parser.Parser;
 public class CSVProcessor {
     public CSVReader reader = new CSVReader();
 
-    public Parser parser = new Parser();
+
 
     public void parse(){
         reader.read();
-       parser.setClientName(reader.klient[0]);
-       
+        Parser parser = new Parser(reader.klient[0],reader.klient[1],reader.klient[2],reader.klient[3],reader.klient[4],reader.klient[5],reader.klient[6]);
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + parser.toString());
     }
 
 }

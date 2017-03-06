@@ -12,8 +12,10 @@ import java.io.IOException;
 public class CSVReader {
 
 public String wynik;
+public String[] klient;
 
-    public String read() {
+
+    public String[] read() {
 
 
 
@@ -26,16 +28,17 @@ public String wynik;
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
-
+                 if  (line.startsWith("nr_klienta")!= true){
                 // use comma as separator
-                String[] klient = line.split(cvsSplitBy);
+                 klient = line.split(cvsSplitBy);
 
-                 wynik = "Klient [nr= " + klient[1] + " , name=" + klient[2] + ", region=" + klient[3] +
-                          ", branza=" + klient[4] + ", telefon=" + klient[5] + ", email=" + klient[6] + ", dzialanosc od=" + klient[7] + "]";
-                System.out.println("Klient [nr= " + klient[1] + " , name=" + klient[2] + ", region=" + klient[3] +
-                        ", branza=" + klient[4] + ", telefon=" + klient[5] + ", email=" + klient[6] + ", dzialanosc od=" + klient[7] + "]");
 
-            }
+
+                wynik = "Klient [nr= " + klient[0] + " , name=" + klient[1] + ", region=" + klient[2] +
+                        ", branza=" + klient[3] + ", telefon=" + klient[4] + ", email=" + klient[5] + ", dzialanosc od=" + klient[6] + "]";
+                System.out.println(wynik);
+
+            }}
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -50,9 +53,9 @@ public String wynik;
                 }
             }
         }
-        return wynik;
+        return klient;
+    }
     }
 
-}
 
 

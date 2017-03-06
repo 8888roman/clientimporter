@@ -1,5 +1,6 @@
 package com.ing.scheduler;
 
+import com.ing.csvreader.CSVProcessor;
 import com.ing.csvreader.CSVReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,12 +21,12 @@ public class Scheduler {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    public CSVReader reader = new CSVReader();
+    public CSVProcessor reader = new CSVProcessor();
 
 
     @Scheduled(fixedRate = 5000)
      public void czytaj(){
-        reader.read();}
+        reader.parse();}
 //    public void reportCurrentTime() {
 //
 //       log.info("The time is now {}", dateFormat.format(new Date()));
