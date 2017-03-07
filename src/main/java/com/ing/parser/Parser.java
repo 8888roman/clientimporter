@@ -19,11 +19,12 @@ public class Parser {
 
 
 
-    String[] clientData = null;
+
 
         public List parse(List<String[]> clientList){
         Client client = null;
         List<Client> clientsArray = null;
+        String[] clientData;
 
         for  (int i = 0; i < clientList.size(); i++){
             clientData = clientList.get(i);
