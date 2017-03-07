@@ -27,13 +27,9 @@ public class Scheduler {
 
     @Scheduled(fixedRate = 5000)
      public void czytaj(){
-        csvProcessor.parse();}
-//    public void reportCurrentTime() {
-//
-//       log.info("The time is now {}", dateFormat.format(new Date()));
-//
-//
-//}
+
+        csvProcessor.save( csvProcessor.parse());
+    }
 
 
 

@@ -15,24 +15,27 @@ import java.util.List;
  */
 @Component
 public class CSVProcessor {
+    @Autowired
+    private ClientRepository clientRepository;
 
     public CSVReader reader = new CSVReader();
 
     @Autowired
     private Parser parser ;
-    @Autowired
-    private ClientRepository clientRepository;
+
 
     public List<Client> parse(){
 
         List<Client>  clients = parser.parse(reader.read());
-        for(Client c : clients) { clientRepository.save(c); }
+
     return clients;
 
 
-        // TODO: 2017-03-07     podłaczyc repozytorium przez autowired
-//        ClientController clientController = new ClientController();
-//        clientController.addNewClient();
+
+
     }
+   public void save(List<Client> clients){
+       for(Client c : clients) { clientRepository.save(c) ;}
+   }
 
 }
