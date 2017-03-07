@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -27,7 +28,8 @@ public class CSVReader {
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
-        List<String[]> clients =null;
+       // List<String[]> clients =null;
+        List<String[]> clients = new ArrayList<String[]>();
 
         try {
 

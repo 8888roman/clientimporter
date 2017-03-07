@@ -19,7 +19,7 @@ public class CSVProcessor {
     public void parse(){
 //        reader.read();
 
-        new Parser();
+     //   new Parser();
 // TODO: 2017-03-07 przekazac tablice stringów zamiast pojedynczych
         parser.parse(reader.read());
 
