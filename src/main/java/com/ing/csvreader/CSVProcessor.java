@@ -9,17 +9,18 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Roman on 2017-03-06.
  */
+@Component
 public class CSVProcessor {
     public CSVReader reader = new CSVReader(); //autowired
 
     //public Parser parser;
     @Autowired
-    private Parser parser;
+    private Parser parser ;
 
     public void parse(){
 //        reader.read();
 
-     //   new Parser();
+//       new Parser();
 // TODO: 2017-03-07 przekazac tablice stringów zamiast pojedynczych
         parser.parse(reader.read());
 
