@@ -22,8 +22,8 @@ public class Parser {
 
 
         public List parse(List<String[]> clientList){
-        Client client = null;
-        List<Client> clientsArray = null;
+        Client client = new Client();
+        List<Client> clientsArray = new ArrayList<Client>();
         String[] clientData;
 
         for  (int i = 0; i < clientList.size(); i++){

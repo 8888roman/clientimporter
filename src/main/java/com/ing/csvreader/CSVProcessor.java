@@ -6,23 +6,25 @@ import com.ing.parser.Parser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Roman on 2017-03-06.
  */
 @Component
 public class CSVProcessor {
-    public CSVReader reader = new CSVReader(); //autowired
-
-    //public Parser parser;
+    public CSVReader reader = new CSVReader();
+List<Client> clients = new ArrayList<>();
     @Autowired
     private Parser parser ;
 
     public void parse(){
-//        reader.read();
 
-//       new Parser();
-// TODO: 2017-03-07 przekazac tablice stringów zamiast pojedynczych
-        parser.parse(reader.read());
+
+
+         clients = parser.parse(reader.read());
+
 
 
         // TODO: 2017-03-07     podłaczyc repozytorium przez autowired
