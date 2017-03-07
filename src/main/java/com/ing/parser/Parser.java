@@ -1,6 +1,7 @@
 package com.ing.parser;
 
 import com.ing.csvreader.CSVReader;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,6 +10,7 @@ import java.util.Date;
 /**
  * Created by Roman on 2017-03-06.
  */
+@Component
 public class Parser {
     public String clientNumber;
     public String clientPhone;

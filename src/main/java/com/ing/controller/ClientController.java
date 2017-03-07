@@ -18,6 +18,8 @@ import javax.validation.Valid;
 public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private Parser parser;
 
  public void addNewClient(){
         clientRepository.save(new Client(parser.getClientNumberParsed(),
