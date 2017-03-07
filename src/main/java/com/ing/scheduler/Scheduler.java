@@ -21,12 +21,12 @@ public class Scheduler {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    public CSVProcessor reader = new CSVProcessor();
+    public CSVProcessor csvProcessor = new CSVProcessor();
 
 
     @Scheduled(fixedRate = 5000)
      public void czytaj(){
-        reader.parse();}
+        csvProcessor.parse();}
 //    public void reportCurrentTime() {
 //
 //       log.info("The time is now {}", dateFormat.format(new Date()));

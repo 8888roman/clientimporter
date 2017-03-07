@@ -28,16 +28,13 @@ public class Parser {
 
         for  (int i = 0; i < clientList.size(); i++){
             clientData = clientList.get(i);
-            try {
+
                 client.setClientNumber(Long.parseLong(clientData[0]));
-            } catch (NullPointerException e) {
-                e.printStackTrace();
-            }
-            client.setName(clientData[1]);
-            client.setRegion(clientData[2]);
-            client.setBranch(clientData[3]);
-            client.setPhoneNumber(Long.parseLong(clientData[4]));
-            client.setEmail(clientData[5]);
+                client.setName(clientData[1]);
+                client.setRegion(clientData[2]);
+                client.setBranch(clientData[3]);
+                client.setPhoneNumber(Long.parseLong(clientData[4]));
+                client.setEmail(clientData[5]);
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             try {
