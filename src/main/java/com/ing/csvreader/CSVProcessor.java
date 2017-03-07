@@ -19,6 +19,7 @@ public class CSVProcessor {
     private ClientRepository clientRepository;
 
     public CSVReader reader = new CSVReader();
+    List<Client> clients = new ArrayList<Client>();
 
     @Autowired
     private Parser parser ;
@@ -26,7 +27,7 @@ public class CSVProcessor {
 
     public List<Client> parse(){
 
-        List<Client>  clients = parser.parse(reader.read());
+        clients = parser.parse(reader.read());
 
     return clients;
 

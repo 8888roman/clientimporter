@@ -18,23 +18,21 @@ import java.util.List;
 public class Parser {
 
 
+    public List<Client> parse(List<String[]> clientList) {
 
-
-
-        public List<Client> parse(List<String[]> clientList){
-        Client client = new Client();
         List<Client> clientsArray = new ArrayList<Client>();
         String[] clientData;
 
-        for  (int i = 0; i < clientList.size(); i++){
+        for (int i = 0; i < clientList.size(); i++) {
+            Client client = new Client();
             clientData = clientList.get(i);
 
-                client.setClientNumber(Long.parseLong(clientData[0]));
-                client.setName(clientData[1]);
-                client.setRegion(clientData[2]);
-                client.setBranch(clientData[3]);
-                client.setPhoneNumber(Long.parseLong(clientData[4]));
-                client.setEmail(clientData[5]);
+            client.setClientNumber(Long.parseLong(clientData[0]));
+            client.setName(clientData[1]);
+            client.setRegion(clientData[2]);
+            client.setBranch(clientData[3]);
+            client.setPhoneNumber(Long.parseLong(clientData[4]));
+            client.setEmail(clientData[5]);
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             try {
@@ -48,8 +46,9 @@ public class Parser {
 
         }
 
-    return clientsArray;
+        return clientsArray;
 
     }
+
 }
 
