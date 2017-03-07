@@ -16,13 +16,23 @@ public class Parser {
     public Long clientNumberParsed;
     public Long clientPhoneParsed;
     public Date clientEstablishDateParsed;
+    public String clientName;
+    public String clientRegion;
+    public String clientBranch;
+    public String clientEmail;
+
 
     public Parser() {
     }
 
-    public Parser(String clientNumber, String clientPhone, String clientEstablishDate) {
+    public Parser(String clientNumber, String clientName, String clientRegion, String clientBranch, String clientPhone, String clientEmail,
+                  String clientEstablishDate) {
         this.clientNumber = clientNumber;
+        this.clientName = clientName;
+        this.clientRegion = clientRegion;
+        this.clientBranch = clientBranch;
         this.clientPhone = clientPhone;
+        this.clientEmail = clientEmail;
         this.clientEstablishDate = clientEstablishDate;
     }
 
@@ -91,12 +101,51 @@ public class Parser {
         this.clientEstablishDateParsed = clientEstablishDateParsed;
     }
 
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getClientRegion() {
+        return clientRegion;
+    }
+
+    public void setClientRegion(String clientRegion) {
+        this.clientRegion = clientRegion;
+    }
+
+    public String getClientBranch() {
+        return clientBranch;
+    }
+
+    public void setClientBranch(String clientBranch) {
+        this.clientBranch = clientBranch;
+    }
+
+    public String getClientEmail() {
+        return clientEmail;
+    }
+
+    public void setClientEmail(String clientEmail) {
+        this.clientEmail = clientEmail;
+    }
+
     @Override
     public String toString() {
         return "Parser{" +
                 "clientNumber='" + clientNumber + '\'' +
                 ", clientPhone='" + clientPhone + '\'' +
                 ", clientEstablishDate='" + clientEstablishDate + '\'' +
+                ", clientNumberParsed=" + clientNumberParsed +
+                ", clientPhoneParsed=" + clientPhoneParsed +
+                ", clientEstablishDateParsed=" + clientEstablishDateParsed +
+                ", clientName='" + clientName + '\'' +
+                ", clientRegion='" + clientRegion + '\'' +
+                ", clientBranch='" + clientBranch + '\'' +
+                ", clientEmail='" + clientEmail + '\'' +
                 '}';
     }
 }
