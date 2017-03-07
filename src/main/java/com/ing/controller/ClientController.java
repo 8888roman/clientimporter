@@ -34,4 +34,3 @@ public class ClientController {
     }
 
 }
-// TODO: 2017-03-06 zapis do bazy 
