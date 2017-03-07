@@ -14,17 +14,16 @@ import java.util.List;
  */
 @Component
 public class CSVProcessor {
+
     public CSVReader reader = new CSVReader();
-List<Client> clients = new ArrayList<>();
+
     @Autowired
     private Parser parser ;
 
-    public void parse(){
+    public List<Client> parse(){
 
-
-
-         clients = parser.parse(reader.read());
-
+        List<Client>  clients = parser.parse(reader.read());
+return clients;
 
 
         // TODO: 2017-03-07     podłaczyc repozytorium przez autowired
