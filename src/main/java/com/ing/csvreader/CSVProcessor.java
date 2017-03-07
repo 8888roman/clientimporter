@@ -10,21 +10,23 @@ import org.springframework.stereotype.Component;
  * Created by Roman on 2017-03-06.
  */
 public class CSVProcessor {
-    public CSVReader reader = new CSVReader();
+    public CSVReader reader = new CSVReader(); //autowired
 
     //public Parser parser;
     @Autowired
     private Parser parser;
 
     public void parse(){
-        reader.read();
+//        reader.read();
 
-        new Parser(reader.klient[0], reader.klient[1], reader.klient[2], reader.klient[3], reader.klient[4], reader.klient[5], reader.klient[6]);
+        new Parser();
+// TODO: 2017-03-07 przekazac tablice stringów zamiast pojedynczych
+        parser.parse(reader.read());
 
-        parser.parse();
 
-        ClientController clientController = new ClientController();
-        clientController.addNewClient();
+        // TODO: 2017-03-07     podłaczyc repozytorium przez autowired
+//        ClientController clientController = new ClientController();
+//        clientController.addNewClient();
     }
 
 }

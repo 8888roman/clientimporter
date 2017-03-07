@@ -21,16 +21,6 @@ public class ClientController {
     @Autowired
     private Parser parser;
 
- public void addNewClient(){
-        clientRepository.save(new Client(parser.getClientNumberParsed(),
-                                         parser.getClientName(),
-                                         parser.getClientRegion(),
-                                         parser.getClientBranch(),
-                                         parser.getClientPhoneParsed(),
-                                         parser.getClientEmail(),
-                                         parser.getClientEstablishDateParsed()));
 
-
-    }
 
 }
