@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Client Importer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+  </head>
+
+<body>
+
+
+
+<div class="container">
+    <form action="#" th:action="@{/}" th:object="${noteForm}" method="post">
+
+        <div class="well">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name">Tytuł:</label>
+                        <input type="text" class="form-control" th:field="*{name}"  id="name"/>
+                        <div class = "errors" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Title error message</div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="text">Treść</label>
+                        <input type="text" class="form-control" th:field="*{text}"  id="text"/>
+                        <div class = "errors" th:if="${#fields.hasErrors('text')}" th:errors="*{text}">Title error message</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success btn-block">ZAPISZ</button>
+                </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

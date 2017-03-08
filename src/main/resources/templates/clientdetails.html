@@ -21,19 +21,29 @@
                 <th>Nazwa</th>
                 <th>Region</th>
                 <th>Branża</th>
+                <th>Telefon</th>
+                <th>E-mail</th>
+                <th>Data założenia działalności</th>
+
             </tr>
             <tr th:each="client : ${clients}">
                 <td th:text="${client.id}"></td>
                 <td th:text="${client.name}"></td>
                 <td th:text="${client.region}"></td>
                 <td th:text="${client.branch}"></td>
-                <td> <a th:href="@{/clientdetails/} + ${client.id}">Szczegóły</a></td>
+                <td th:text="${client.phoneNumber}"></td>
+                <td th:text="${client.email}"></td>
+                <td th:text="${client.dateOfEstablish}"></td>
+
+
             </tr>
         </table>
     </div>
 
 </div>
-
+<a href= "${/client.id} + @{/note}" class="btn btn-default btn-lg">
+    Dodaj notatke
+</a>
 
 </body>
 </html>

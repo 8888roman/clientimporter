@@ -34,6 +34,17 @@ public class ClientController {
         return "clientlist";
     }
 
+    @RequestMapping(value= "/clientdetails/{id}", method=RequestMethod.GET)
+    public String showClientDetails(Client client, @PathVariable("id") Long id, Model model) {
+        model.addAttribute("clients", clientRepository.findOne(id));
+        return "clientdetails";
+    }
+
+    @RequestMapping(value= "/clientdetails/{id}/note", method=RequestMethod.GET)
+    public String addNote(Client client, @PathVariable("id") Long id, Model model) {
+        model.addAttribute("clients", clientRepository.findOne(id));
+        return "note";
+    }
 
     @Configuration
     @EnableWebMvc

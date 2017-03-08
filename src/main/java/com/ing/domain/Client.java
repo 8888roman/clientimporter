@@ -14,7 +14,7 @@ import java.util.List;
 public class Client {
     @Id
     @Column(name ="id")
-    private long id;
+    public long id;
     private String name;
     private String region;
     private String branch;

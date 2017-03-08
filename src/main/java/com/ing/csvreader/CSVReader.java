@@ -42,9 +42,9 @@ public class CSVReader {
                     klient = line.split(cvsSplitBy);
 
 
-                    wynik = "Klient [nr= " + klient[0] + " , name=" + klient[1] + ", region=" + klient[2] +
-                            ", branza=" + klient[3] + ", telefon=" + klient[4] + ", email=" + klient[5] + ", dzialanosc od=" + klient[6] + "]";
-                    System.out.println(wynik);
+//                    wynik = "Klient [nr= " + klient[0] + " , name=" + klient[1] + ", region=" + klient[2] +
+//                            ", branza=" + klient[3] + ", telefon=" + klient[4] + ", email=" + klient[5] + ", dzialanosc od=" + klient[6] + "]";
+//                    System.out.println(wynik);
                     clients.add(klient);
 
                 }
