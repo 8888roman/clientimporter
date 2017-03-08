@@ -2,6 +2,7 @@ package com.ing.form;
 
 import com.ing.domain.CurrentDate;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

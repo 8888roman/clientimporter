@@ -40,7 +40,7 @@ public class NoteController {
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
     public String addNewNote(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
-      //  model.addAttribute("noteForm", NoteForm );
+       model.addAttribute("noteForm", new NoteForm() );
         if (bindingResult.hasErrors()) {
             return "note";
         }
