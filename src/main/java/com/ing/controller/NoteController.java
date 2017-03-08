@@ -39,14 +39,15 @@ public class NoteController {
     }
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
-    public String addNewSupplier(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
+    public String addNewNote(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
       //  model.addAttribute("noteForm", NoteForm );
         if (bindingResult.hasErrors()) {
             return "note";
         }
 
 
-        noteRepository.save(new Note(noteForm.getName(),
+        noteRepository.save(new Note(
+                noteForm.getName(),
                 noteForm.getText(),
                 noteForm.getDate(),
                 clientRepository.findOne(id)
