@@ -1,9 +1,6 @@
 package com.ing.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -14,6 +11,7 @@ import java.util.Date;
 public class Note {
     @Id
     @Column
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String name;
     private String text;
@@ -83,4 +81,6 @@ public class Note {
                 ", clientId=" + clientId +
                 '}';
     }
+
+
 }

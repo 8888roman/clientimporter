@@ -13,7 +13,35 @@
 <body>
 
 
+<div class="container">
+    <div th:if="${not #lists.isEmpty(clients)}">
+        <table class="table table-stripped">
+            <tr>
+                <th>Nr klienta</th>
+                <th>Nazwa</th>
+                <th>Region</th>
+                <th>Branża</th>
+                <th>Telefon</th>
+                <th>E-mail</th>
+                <th>Data założenia działalności</th>
 
+            </tr>
+            <tr th:each="client : ${clients}">
+                <td th:text="${client.id}"></td>
+                <td th:text="${client.name}"></td>
+                <td th:text="${client.region}"></td>
+                <td th:text="${client.branch}"></td>
+                <td th:text="${client.phoneNumber}"></td>
+                <td th:text="${client.email}"></td>
+                <td th:text="${client.dateOfEstablish}"></td>
+
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>
 <div class="container">
     <form action="#" th:action="@{/}" th:object="${noteForm}" method="post">
 

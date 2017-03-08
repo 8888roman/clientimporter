@@ -2,8 +2,11 @@ package com.ing.controller;
 
 import com.ing.csvreader.CSVProcessor;
 import com.ing.domain.Client;
+import com.ing.domain.Note;
+import com.ing.form.NoteForm;
 import com.ing.parser.Parser;
 import com.ing.repository.ClientRepository;
+import com.ing.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
@@ -22,22 +25,34 @@ import javax.validation.Valid;
  * Created by Roman on 2017-03-06.
  */
 @Controller
-public class ClientController {
+public class NoteController {
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private NoteRepository noteRepository;
 
 
 
-    @RequestMapping(value = "/clientlist", method = RequestMethod.GET)
-    public String showAllClients(Model model) {
-        model.addAttribute("clients", clientRepository.findAll());
-        return "clientlist";
-    }
-
-    @RequestMapping(value= "/clientdetails/{id}", method=RequestMethod.GET)
+    @RequestMapping(value= "/clientdetails/{id}/note", method=RequestMethod.GET)
     public String showClientDetails(Client client, @PathVariable("id") Long id, Model model) {
         model.addAttribute("clients", clientRepository.findOne(id));
-        return "clientdetails";
+        return "note";
+    }
+
+    @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
+    public String addNewSupplier(@Valid NoteForm noteForm, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "note";
+        }
+
+
+        noteRepository.save(new Note(noteForm.getName(),
+                                     noteForm.getText(),
+                                     noteForm.getDate(),
+              
+                                    ));
+//        model.addAttribute("suppliers", supplierRepository.findAll());
+        return "redirect:/clientdetails/{id}";
     }
 
 

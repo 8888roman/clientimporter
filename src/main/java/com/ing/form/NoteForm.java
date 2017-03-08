@@ -1,5 +1,6 @@
 package com.ing.form;
 
+import com.ing.domain.CurrentDate;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
@@ -36,6 +37,12 @@ public class NoteForm {
         this.text = text;
     }
 
+    public CurrentDate currentDate = new CurrentDate();
+
+    public Date getDate(){
+      return  currentDate.currentDate();
+    }
+    
     @Override
     public String toString() {
         return "NoteForm{" +

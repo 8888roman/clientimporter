@@ -35,15 +35,16 @@
                 <td th:text="${client.email}"></td>
                 <td th:text="${client.dateOfEstablish}"></td>
 
-
+                <a th:href="${client.id} + '/note'" class="btn btn-default btn-lg">
+                    Dodaj notatke
+                </a>
             </tr>
         </table>
+
     </div>
 
 </div>
-<a href= "${/client.id} + @{/note}" class="btn btn-default btn-lg">
-    Dodaj notatke
-</a>
+
 
 </body>
 </html>
