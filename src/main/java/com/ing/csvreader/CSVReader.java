@@ -25,7 +25,7 @@ public class CSVReader {
 
         String wynik = null;
         String[] klient = null;
-        String csvFile = "/Users/Roman/klienci.csv";
+        String csvFile = "/klienci.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
