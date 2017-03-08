@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Component
 public class CSVReader {
@@ -35,7 +36,8 @@ public class CSVReader {
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
-                 if  (line.startsWith("nr_klienta")!= true){
+
+                if  (!(line.startsWith("nr_klienta"))){
                 // use comma as separator
                  klient = line.split(cvsSplitBy);
 
@@ -45,6 +47,7 @@ public class CSVReader {
                         ", branza=" + klient[3] + ", telefon=" + klient[4] + ", email=" + klient[5] + ", dzialanosc od=" + klient[6] + "]";
                 System.out.println(wynik);
                 clients.add(klient);
+
             }}
 
         } catch (FileNotFoundException e) {

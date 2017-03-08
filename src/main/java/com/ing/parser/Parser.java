@@ -34,7 +34,8 @@ public class Parser {
             client.setPhoneNumber(Long.parseLong(clientData[4]));
             client.setEmail(clientData[5]);
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            // TODO: 2017-03-08 zmienic z powrotem format daty      //   SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             try {
 
                 client.setDateOfEstablish(formatter.parse(clientData[6]));
