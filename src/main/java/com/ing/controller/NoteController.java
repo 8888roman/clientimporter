@@ -33,14 +33,14 @@ public class NoteController {
 
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.GET)
-    public String showClientDetails(Client client, @PathVariable("id") Long id, Model model) {
+    public String showClientDetails(NoteForm noteForm, @PathVariable("id") Long id, Model model) {
         model.addAttribute("clients", clientRepository.findOne(id));
         return "note";
     }
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
     public String addNewNote(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
-       model.addAttribute("noteForm", new NoteForm() );
+    //   model.addAttribute("noteForm", new NoteForm() );
         if (bindingResult.hasErrors()) {
             return "note";
         }
