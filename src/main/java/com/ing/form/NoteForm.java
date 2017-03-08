@@ -20,6 +20,15 @@ public class NoteForm {
     private String name;
     @NotEmpty(message = "Podaj treść notatki")
     private String text;
+    private Long clientId;
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
 
     public String getName() {
         return name;
@@ -42,7 +51,7 @@ public class NoteForm {
     public Date getDate(){
       return  currentDate.currentDate();
     }
-    
+
     @Override
     public String toString() {
         return "NoteForm{" +

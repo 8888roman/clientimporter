@@ -23,8 +23,8 @@ public class Note {
     public Note() {
     }
 
-    public Note(Long id, String name, String text, Date date, Client clientId) {
-        this.id = id;
+    public Note( String name, String text, Date date, Client clientId) {
+
         this.name = name;
         this.text = text;
         this.date = date;

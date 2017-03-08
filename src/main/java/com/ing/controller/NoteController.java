@@ -32,29 +32,27 @@ public class NoteController {
     private NoteRepository noteRepository;
 
 
-
-    @RequestMapping(value= "/clientdetails/{id}/note", method=RequestMethod.GET)
+    @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.GET)
     public String showClientDetails(Client client, @PathVariable("id") Long id, Model model) {
         model.addAttribute("clients", clientRepository.findOne(id));
         return "note";
     }
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
-    public String addNewSupplier(@Valid NoteForm noteForm, BindingResult bindingResult, Model model) {
+    public String addNewSupplier(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "note";
         }
 
 
         noteRepository.save(new Note(noteForm.getName(),
-                                     noteForm.getText(),
-                                     noteForm.getDate(),
-              
-                                    ));
-//        model.addAttribute("suppliers", supplierRepository.findAll());
+                noteForm.getText(),
+                noteForm.getDate(),
+                clientRepository.findOne(id)
+        ));
+
         return "redirect:/clientdetails/{id}";
     }
-
 
 
     @Configuration
