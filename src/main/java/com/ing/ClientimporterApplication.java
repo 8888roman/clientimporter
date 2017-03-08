@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 public class ClientimporterApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ClientimporterApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ClientimporterApplication.class, args);
+    }
 }

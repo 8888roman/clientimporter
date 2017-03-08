@@ -22,21 +22,22 @@ public class CSVProcessor {
     List<Client> clients = new ArrayList<Client>();
 
     @Autowired
-    private Parser parser ;
+    private Parser parser;
 
 
-    public List<Client> parse(){
+    public List<Client> parse() {
 
         clients = parser.parse(reader.read());
 
-    return clients;
-
-
+        return clients;
 
 
     }
-   public void save(List<Client> clients){
-       for(Client c : clients) { clientRepository.save(c) ;}
-   }
+
+    public void save(List<Client> clients) {
+        for (Client c : clients) {
+            clientRepository.save(c);
+        }
+    }
 
 }

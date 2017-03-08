@@ -5,9 +5,16 @@ import com.ing.domain.Client;
 import com.ing.parser.Parser;
 import com.ing.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.validation.Valid;
 
@@ -18,9 +25,23 @@ import javax.validation.Valid;
 public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
-    @Autowired
-    private Parser parser;
 
 
 
+    @RequestMapping(value = "/clientlist", method = RequestMethod.GET)
+    public String showAllClients(Model model) {
+        model.addAttribute("clients", clientRepository.findAll());
+        return "clientlist";
+    }
+
+
+    @Configuration
+    @EnableWebMvc
+    public class WebConfig extends WebMvcConfigurerAdapter {
+
+        @Override
+        public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        }
+    }
 }

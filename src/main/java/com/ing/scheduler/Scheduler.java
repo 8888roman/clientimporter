@@ -21,17 +21,15 @@ public class Scheduler {
     private static final Logger log = LoggerFactory.getLogger(Scheduler.class);
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-@Autowired
-    public CSVProcessor csvProcessor ;
+    @Autowired
+    public CSVProcessor csvProcessor;
 
 
     @Scheduled(fixedRate = 5000)
-     public void czytaj(){
+    public void czytaj() {
 
-        csvProcessor.save( csvProcessor.parse());
+        csvProcessor.save(csvProcessor.parse());
     }
-
-
 
 
 }
