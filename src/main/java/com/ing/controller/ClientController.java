@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -46,7 +43,7 @@ public class ClientController {
     }
 
     @RequestMapping(value = "clientlist1", method = RequestMethod.GET)
-    public Iterable<Client> branchQuery(@RequestParam ("query") String branchQuery){
+    public @ResponseBody Iterable<Client> branchQuery(@RequestParam ("query") String branchQuery){
         return clientRepository.findByBranchIgnoreCaseContaining(branchQuery);
     }
 
