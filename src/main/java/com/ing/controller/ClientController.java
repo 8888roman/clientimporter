@@ -28,8 +28,8 @@ public class ClientController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showAll(Model model) {
-        model.addAttribute("clients", clientRepository.findAll());
-        return "clientlist";
+
+        return "index";
     }
 
     @RequestMapping(value = "/clientlist", method = RequestMethod.GET)
