@@ -26,7 +26,11 @@ public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
 
-
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showAll(Model model) {
+        model.addAttribute("clients", clientRepository.findAll());
+        return "clientlist";
+    }
 
     @RequestMapping(value = "/clientlist", method = RequestMethod.GET)
     public String showAllClients(Model model) {

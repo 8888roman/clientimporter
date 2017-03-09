@@ -12,9 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -39,10 +37,11 @@ public class NoteController {
     }
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
-    public String addNewNote(@Valid NoteForm noteForm, @PathVariable(name = "id") Long id, BindingResult bindingResult, Model model) {
-    //   model.addAttribute("noteForm", new NoteForm() );
+    public String addNewNote(@ModelAttribute("noteForm") @Valid NoteForm noteForm, BindingResult bindingResult, Model model, @PathVariable(name = "id") Long id) {
+       model.addAttribute("noteForm", new NoteForm() );
+        model.addAttribute("clients", clientRepository.findOne(id));
         if (bindingResult.hasErrors()) {
-            return "note";
+            return "clientlist";
         }
 
 
@@ -53,7 +52,7 @@ public class NoteController {
                 clientRepository.findOne(id)
         ));
 
-        return "redirect:/clientdetails/{id}";
+        return "redirect:/clientdetails";
     }
 
 
