@@ -37,11 +37,12 @@ public class NoteController {
     }
 
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
-    public String addNewNote(@ModelAttribute("noteForm") @Valid NoteForm noteForm, BindingResult bindingResult, Model model, @PathVariable(name = "id") Long id) {
+    public String addNewNote(@ModelAttribute("noteForm") @Valid NoteForm noteForm, BindingResult bindingResult,
+                             Model model, @PathVariable(name = "id") Long id) {
        model.addAttribute("noteForm", new NoteForm() );
         model.addAttribute("clients", clientRepository.findOne(id));
         if (bindingResult.hasErrors()) {
-            return "/clientlist";
+            return "/clientdetails/{id}/note";
         }
 
 
@@ -52,7 +53,7 @@ public class NoteController {
                 clientRepository.findOne(id)
         ));
 
-        return "redirect:/clientdetails";
+        return "redirect:/clientlist";
     }
 
 

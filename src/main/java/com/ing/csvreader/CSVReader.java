@@ -17,8 +17,7 @@ import java.util.regex.Pattern;
 @Component
 public class CSVReader {
 
-//public String wynik;
-//public String[] klient;
+
 
 
     public List<String[]> read() {
@@ -64,7 +63,7 @@ public class CSVReader {
             }
         }
         return clients;
-        // TODO: 2017-03-07 wewnatrz reada dodac liste tablicy stringów i dodawac przez list.add 
+
     }
 }
 

@@ -33,8 +33,8 @@ public class Parser {
             client.setBranch(clientData[3]);
             client.setPhoneNumber(Long.parseLong(clientData[4]));
             client.setEmail(clientData[5]);
-
-       SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+   //         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  this is for google docs csv
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
             try {
 

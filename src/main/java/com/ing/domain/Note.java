@@ -10,9 +10,10 @@ import java.util.Date;
 @Entity
 public class Note {
     @Id
-    @Column
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+
+    @Column(name = "id",unique=true, nullable = false)
+    private int id;
     private String name;
     private String text;
     private Date date;
@@ -23,7 +24,7 @@ public class Note {
     public Note() {
     }
 
-    public Note( String name, String text, Date date, Client clientId) {
+    public Note(  String name, String text, Date date, Client clientId) {
 
         this.name = name;
         this.text = text;
@@ -31,11 +32,12 @@ public class Note {
         this.clientId = clientId;
     }
 
-    public Long getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

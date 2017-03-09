@@ -10,7 +10,8 @@ import java.util.List;
  */
 public interface ClientRepository extends CrudRepository<Client, Long> {
     List<Client> findById(Long id);
-
+    List<Client> findByBranchIgnoreCaseContaining (String branchQuery);
+    List<Client> findByRegionIgnoreCaseContaining (String regionQuery);
 
 
 }
