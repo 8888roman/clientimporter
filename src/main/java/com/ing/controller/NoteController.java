@@ -41,7 +41,7 @@ public class NoteController {
        model.addAttribute("noteForm", new NoteForm() );
         model.addAttribute("clients", clientRepository.findOne(id));
         if (bindingResult.hasErrors()) {
-            return "clientlist";
+            return "/clientlist";
         }
 
 
