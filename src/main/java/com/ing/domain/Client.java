@@ -93,7 +93,6 @@ public class Client {
         this.dateOfEstablish = dateOfEstablish;
     }
 
-
     public void setNoteList(List<Note> noteList) {
         this.noteList = noteList;
     }

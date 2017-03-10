@@ -1,10 +1,8 @@
 package com.ing.controller;
 
-import com.ing.csvreader.CSVProcessor;
-import com.ing.domain.Client;
+
 import com.ing.domain.Note;
 import com.ing.form.NoteForm;
-import com.ing.parser.Parser;
 import com.ing.repository.ClientRepository;
 import com.ing.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;

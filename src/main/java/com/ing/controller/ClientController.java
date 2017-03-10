@@ -1,20 +1,18 @@
 package com.ing.controller;
 
-import com.ing.csvreader.CSVProcessor;
+
 import com.ing.domain.Client;
-import com.ing.parser.Parser;
 import com.ing.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import javax.validation.Valid;
+
 
 /**
  * Created by Roman on 2017-03-06.
@@ -42,10 +40,10 @@ public class ClientController {
         return "clientdetails";
     }
 
-    @RequestMapping(value = "clientlist1", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Client> branchQuery(@RequestParam ("query") String branchQuery){
-        return clientRepository.findByBranchIgnoreCaseContaining(branchQuery);
-    }
+//    @RequestMapping(value = "clientlist1", method = RequestMethod.GET)
+//    public @ResponseBody Iterable<Client> branchQuery(@RequestParam ("query") String branchQuery){
+//        return clientRepository.findByBranchIgnoreCaseContaining(branchQuery);
+//    }
 
     @Configuration
     @EnableWebMvc

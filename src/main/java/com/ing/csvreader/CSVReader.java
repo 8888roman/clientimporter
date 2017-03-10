@@ -12,7 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
+
 
 @Component
 public class CSVReader {
@@ -22,13 +22,12 @@ public class CSVReader {
 
     public List<String[]> read() {
 
-        String wynik = null;
+
         String[] klient = null;
         String csvFile = "/klienci.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
-        // List<String[]> clients =null;
         List<String[]> clients = new ArrayList<String[]>();
 
         try {
@@ -41,9 +40,7 @@ public class CSVReader {
                     klient = line.split(cvsSplitBy);
 
 
-//                    wynik = "Klient [nr= " + klient[0] + " , name=" + klient[1] + ", region=" + klient[2] +
-//                            ", branza=" + klient[3] + ", telefon=" + klient[4] + ", email=" + klient[5] + ", dzialanosc od=" + klient[6] + "]";
-//                    System.out.println(wynik);
+
                     clients.add(klient);
 
                 }

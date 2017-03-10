@@ -11,7 +11,6 @@ import java.util.Date;
 public class Note {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
-
     @Column(name = "id",unique=true, nullable = false)
     private int id;
     private String name;

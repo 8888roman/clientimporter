@@ -1,6 +1,7 @@
 package com.ing.repository;
 
 import com.ing.domain.Client;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -10,8 +11,7 @@ import java.util.List;
  */
 public interface ClientRepository extends CrudRepository<Client, Long> {
     List<Client> findById(Long id);
-    List<Client> findByBranchIgnoreCaseContaining (String branchQuery);
-    List<Client> findByRegionIgnoreCaseContaining (String regionQuery);
+
 
 
 }

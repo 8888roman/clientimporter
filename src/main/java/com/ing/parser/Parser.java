@@ -1,14 +1,12 @@
 package com.ing.parser;
 
-import com.ing.csvreader.CSVReader;
+
 import com.ing.domain.Client;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
