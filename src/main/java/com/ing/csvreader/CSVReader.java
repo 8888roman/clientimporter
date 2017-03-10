@@ -18,8 +18,6 @@ import java.util.List;
 public class CSVReader {
 
 
-
-
     public List<String[]> read() {
 
 
@@ -38,7 +36,6 @@ public class CSVReader {
                 if (!(line.startsWith("nr_klienta"))) {
                     // use comma as separator
                     klient = line.split(cvsSplitBy);
-
 
 
                     clients.add(klient);

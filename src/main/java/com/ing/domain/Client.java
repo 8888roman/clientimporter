@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 public class Client {
     @Id
-    @Column(name ="id")
+    @Column(name = "id")
     public long id;
     private String name;
     private String region;

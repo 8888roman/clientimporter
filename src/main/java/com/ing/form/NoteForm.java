@@ -2,6 +2,7 @@ package com.ing.form;
 
 import com.ing.domain.CurrentDate;
 import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.Date;
 
 /**
@@ -43,8 +44,8 @@ public class NoteForm {
 
     public CurrentDate currentDate = new CurrentDate();
 
-    public Date getDate(){
-      return  currentDate.currentDate();
+    public Date getDate() {
+        return currentDate.currentDate();
     }
 
     @Override

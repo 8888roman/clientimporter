@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
-
 /**
  * Created by Roman on 2017-03-06.
  */
@@ -34,16 +33,12 @@ public class ClientController {
         return "clientlist";
     }
 
-    @RequestMapping(value= "/clientdetails/{id}", method=RequestMethod.GET)
+    @RequestMapping(value = "/clientdetails/{id}", method = RequestMethod.GET)
     public String showClientDetails(Client client, @PathVariable("id") Long id, Model model) {
         model.addAttribute("clients", clientRepository.findOne(id));
         return "clientdetails";
     }
 
-//    @RequestMapping(value = "clientlist1", method = RequestMethod.GET)
-//    public @ResponseBody Iterable<Client> branchQuery(@RequestParam ("query") String branchQuery){
-//        return clientRepository.findByBranchIgnoreCaseContaining(branchQuery);
-//    }
 
     @Configuration
     @EnableWebMvc

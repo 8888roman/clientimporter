@@ -2,6 +2,7 @@ package com.ing.scheduler;
 
 import com.ing.csvreader.CSVProcessor;
 import com.ing.csvreader.CSVReader;
+import com.ing.csvwriter.CSVWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,14 @@ public class Scheduler {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     @Autowired
     public CSVProcessor csvProcessor;
-
+    @Autowired
+    public CSVWriter csvWriter = new CSVWriter();
 
     @Scheduled(fixedRate = 5000)
     public void czytaj() {
 
         csvProcessor.save(csvProcessor.parse());
+//        csvWriter.writeCsvFile("C:/raport.csv");
     }
 
 

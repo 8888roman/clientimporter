@@ -10,8 +10,8 @@ import java.util.Date;
 @Entity
 public class Note {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
-    @Column(name = "id",unique=true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
     private String name;
     private String text;
@@ -23,7 +23,7 @@ public class Note {
     public Note() {
     }
 
-    public Note(  String name, String text, Date date, Client clientId) {
+    public Note(String name, String text, Date date, Client clientId) {
 
         this.name = name;
         this.text = text;

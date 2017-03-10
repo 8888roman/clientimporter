@@ -1,4 +1,5 @@
 package com.ing.domain;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -13,16 +14,16 @@ import java.util.Date;
 public class CurrentDate {
 
 
-        private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
 
-        public Date currentDate (){
+    public Date currentDate() {
 
-            Date date = new Date();
-            System.out.println(sdf.format(date));
+        Date date = new Date();
+        System.out.println(sdf.format(date));
 
-            return date;
-
-        }
+        return date;
 
     }
+
+}

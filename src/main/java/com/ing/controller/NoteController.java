@@ -37,7 +37,7 @@ public class NoteController {
     @RequestMapping(value = "/clientdetails/{id}/note", method = RequestMethod.POST)
     public String addNewNote(@ModelAttribute("noteForm") @Valid NoteForm noteForm, BindingResult bindingResult,
                              Model model, @PathVariable(name = "id") Long id) {
-       model.addAttribute("noteForm", new NoteForm() );
+        model.addAttribute("noteForm", new NoteForm());
         model.addAttribute("clients", clientRepository.findOne(id));
         if (bindingResult.hasErrors()) {
             return "/clientdetails/{id}/note";

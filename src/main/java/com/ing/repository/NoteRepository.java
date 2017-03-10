@@ -9,6 +9,6 @@ import java.util.List;
  * Created by Roman on 2017-03-08.
  */
 
-    public interface NoteRepository extends CrudRepository<Note, Long> {
-        List<Note> findById(Long id);
+public interface NoteRepository extends CrudRepository<Note, Long> {
+    List<Note> findById(Long id);
 }
